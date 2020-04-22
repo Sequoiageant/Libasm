@@ -1,19 +1,19 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_write.asm                                       :+:      :+:    :+:    ;
+;    ft_read.asm                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/17 11:44:37 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/21 15:50:37 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/21 15:53:52 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
             
             section .text
-            global ft_write
+            global ft_read
 
-ft_write: 
-            mov	rax, 1
+ft_read: 
+            mov	rax, 0
 			syscall
 			ret

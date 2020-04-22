@@ -6,11 +6,9 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/13 14:56:19 by julnolle          #+#    #+#              #
-#    Updated: 2020/04/20 18:12:58 by julnolle         ###   ########.fr        #
+#    Updated: 2020/04/22 16:38:54 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# include color.mk
 
 NAME	= libasm.a
 EXEC	= a.out
@@ -70,6 +68,9 @@ MAIN += main.c
 # ASM Sources
 SRCS += ft_strlen.asm
 SRCS += ft_write.asm
+SRCS += ft_read.asm
+SRCS += ft_strcpy.asm
+SRCS += ft_strcmp.asm
 
 # vpath %.c ./
 # vpath %.asm ./
@@ -97,7 +98,6 @@ $(NAME):	$(OBJS) $(MAIN)
 
 $(OBJS): 	$(DIR_OBJS)%.o: %.asm $(HEAD) Makefile | $(DIR_OBJS)
 			$(ASM) $(NFLASG) $< -o $@
-# 			echo "$(_BOLD)$(_GREEN)--> $@ made$(_END)"
 
 $(DIR_OBJS):
 	mkdir -p $@

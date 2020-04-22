@@ -6,7 +6,7 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/17 11:44:37 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/20 18:30:13 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/21 16:58:40 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
             
@@ -14,11 +14,11 @@
             global ft_strlen
 
 ft_strlen: 
-            mov rax, 0
+            xor rax, rax
             jmp compare
 increment:
             inc rax
 compare:    
             cmp byte [rdi + rax], 0
-            jnz increment
+            jne increment
             ret
