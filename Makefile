@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/13 14:56:19 by julnolle          #+#    #+#              #
-#    Updated: 2020/04/22 16:38:54 by julnolle         ###   ########.fr        #
+#    Updated: 2020/04/23 16:42:00 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS += ft_write.asm
 SRCS += ft_read.asm
 SRCS += ft_strcpy.asm
 SRCS += ft_strcmp.asm
+SRCS += ft_stdup.asm
 
 # vpath %.c ./
 # vpath %.asm ./

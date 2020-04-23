@@ -6,14 +6,15 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/17 11:44:37 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/21 15:53:52 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/23 16:20:23 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
             
             section .text
             global ft_read
+            extern error
 
-ft_read: 
-            mov	rax, 0
+ft_read:
+			mov	rax, 0
 			syscall
 			ret
