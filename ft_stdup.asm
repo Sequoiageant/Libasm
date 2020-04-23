@@ -6,7 +6,7 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/22 16:19:39 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/23 17:06:05 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/23 17:54:46 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -33,4 +33,3 @@ ft_strdup:
 			mov		rdi, rax
 			call	ft_strcpy
 			ret
-
