@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 12:41:49 by julnolle          #+#    #+#             */
-/*   Updated: 2020/04/23 12:09:15 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/04/24 21:02:24 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include <unistd.h>
 # include <sys/syscall.h>
+# include <fcntl.h>
 # include <errno.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <fcntl.h>
 # include <string.h>
 
 # define BUFFER_SIZE 32

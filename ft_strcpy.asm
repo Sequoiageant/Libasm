@@ -6,12 +6,12 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/21 16:48:21 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/23 16:41:26 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/24 22:51:31 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
-            
-            section .text
-            global ft_strcpy
+
+section .text
+global ft_strcpy
 
 ft_strcpy:
 			xor		rax, rax

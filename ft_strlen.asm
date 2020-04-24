@@ -6,19 +6,19 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/17 11:44:37 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/21 16:58:40 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/24 22:50:51 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
-            
-            section .text
-            global ft_strlen
 
-ft_strlen: 
-            xor rax, rax
-            jmp compare
+section .text
+global ft_strlen
+
+ft_strlen:
+			mov rax, rax
+			jmp compare
 increment:
-            inc rax
-compare:    
-            cmp byte [rdi + rax], 0
-            jne increment
-            ret
+			inc rax
+compare:
+			cmp byte [rdi + rax], 0
+			jne increment
+			ret

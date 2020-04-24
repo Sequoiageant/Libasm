@@ -6,15 +6,15 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/22 16:19:39 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/23 17:54:46 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/24 22:52:44 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-			section .text
-			global  ft_strdup
-			extern  ft_strlen
-			extern  ft_strcpy
-			extern  malloc
+section .text
+global  ft_strdup
+extern  ft_strlen
+extern  ft_strcpy
+extern  malloc
 
 _error:
 			ret
