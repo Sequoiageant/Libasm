@@ -6,7 +6,7 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/17 11:44:37 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/24 22:46:49 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/25 12:40:30 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -19,13 +19,13 @@ ft_write:
 			mov rbp, rsp
 			xor rax, rax
 			call __errno_location
-			mov r8, rax
+			mov r10, rax
 			mov rax, 1
 			syscall
 			cmp rax, 0
 			jg return
 			neg rax
-			mov [r8], rax
+			mov [r10], rax
 			mov rax, -1
 return:
 			leave

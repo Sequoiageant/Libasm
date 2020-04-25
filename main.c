@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 11:41:48 by julnolle          #+#    #+#             */
-/*   Updated: 2020/04/24 22:33:11 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/04/25 12:48:18 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(int ac, char const **av)
 	if (ac == 2)
 	{
 		printf("%zu\n", ft_strlen(av[1]));
-		ret = ft_write(-1, av[1], ft_strlen(av[1]));
+		ret = ft_write(1, av[1], ft_strlen(av[1]));
 		if (ret == -1)
 			perror("error write");
 		else
