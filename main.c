@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 11:41:48 by julnolle          #+#    #+#             */
-/*   Updated: 2020/04/25 12:48:18 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/04/25 14:06:25 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(int ac, char const **av)
 	char *dest;
 	char *src = "copy";
 
+	ret = 1;
 	if (ac == 1)
 	{
 		dest = ft_strdup("DESTINATION");
@@ -35,25 +36,34 @@ int main(int ac, char const **av)
 	}
 	if (ac == 2)
 	{
-		printf("%zu\n", ft_strlen(av[1]));
-		ret = ft_write(1, av[1], ft_strlen(av[1]));
-		if (ret == -1)
-			perror("error write");
-		else
-			printf("\n");		
+		// printf("%zu\n", ft_strlen(av[1]));
+		// ret = ft_write(1, av[1], ft_strlen(av[1]));
+		// if (ret == -1)
+		// 	perror("error write");
+		// else
+		// 	printf("\n");		
 
-		fd = open("text.txt", O_RDONLY);
+		fd = open(av[1], O_RDONLY);
 		if (fd != -1)
 		{
-			fd = -1;
-			ret = ft_read(fd, buf, BUFFER_SIZE);
-			if (ret < 0)
+			while ((ret = ft_read(fd, buf, BUFFER_SIZE)) > 0)
+			{
+				printf("ret: %d\n", ret);
+				buf[ret] = '\0';
+				ret = ft_write(1, buf, ft_strlen(buf));
+			}
+			if (ret == -1)
 			{
 				printf("ret   = %d\n", ret);
 				printf("errno = %d\n", errno);
-				perror("error read");
+				perror("error");
 			}
+			ret = ft_write(1, "", 0);
+			if (ret == -1)
+				perror("error open");
 		}
+		else
+			perror("error open");
 	}
 	return (0);
 }

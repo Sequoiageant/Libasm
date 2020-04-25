@@ -6,7 +6,7 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/17 11:44:37 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/25 12:29:30 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/25 13:49:51 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
             
@@ -23,7 +23,7 @@ ft_read:
 			mov rax, 0
 			syscall
 			cmp rax, 0
-			je return
+			jge return
 			neg rax
 			mov [r8], rax
 			mov rax, -1
