@@ -6,7 +6,7 @@
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/22 16:19:39 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/24 22:52:44 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/04/25 18:32:52 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -16,8 +16,6 @@ extern  ft_strlen
 extern  ft_strcpy
 extern  malloc
 
-_error:
-			ret
 
 ft_strdup:
 			xor		rax, rax
@@ -27,9 +25,10 @@ ft_strdup:
 			inc		rdi			; rdi + 1 to malloc len + 1
 			call	malloc
 			cmp		rax, 0		; if malloc failed, ret null
-			je		_error
+			je		return
 			pop		rdi			; retrieve rdi (char *str)
 			mov		rsi, rdi
 			mov		rdi, rax
 			call	ft_strcpy
+return:
 			ret
