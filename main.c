@@ -6,7 +6,7 @@
 /*   By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 11:41:48 by julnolle          #+#    #+#             */
-/*   Updated: 2020/04/25 18:35:14 by julnolle         ###   ########.fr       */
+/*   Updated: 2020/04/25 19:12:39 by julnolle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int main(int ac, char const **av)
 	if (ac == 1)
 	{
 		dest = ft_strdup("DESTINATION");
-		printf("dest avant cpy: %s\n", dest);
+		printf("dest avant cpy: %s, len = %zu\n", dest, ft_strlen(dest));
 		ft_strcpy(dest, src);
-		printf("dest apres cpy: %s\n", dest);
+		printf("dest apres cpy: %s, len = %zu\n", dest, ft_strlen(dest));
 		free(dest);
 		ret = ft_strcmp(src, "copy");
 		printf("strcmp dest with \"copy\": %d\n", ret);
