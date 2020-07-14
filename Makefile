@@ -6,13 +6,12 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/13 14:56:19 by julnolle          #+#    #+#              #
-#    Updated: 2020/06/18 09:47:08 by julnolle         ###   ########.fr        #
+#    Updated: 2020/07/09 15:42:00 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libasm.a
-EXEC	= a.out
-
+EXEC	= libasm
 # ---------------- CC ---------------- #
 
 CC	= clang
@@ -66,15 +65,15 @@ endif
 MAIN += main.c
 
 # ASM Sources
-SRCS += ft_strlen.asm
-SRCS += ft_write.asm
-SRCS += ft_read.asm
-SRCS += ft_strcpy.asm
-SRCS += ft_strcmp.asm
-SRCS += ft_strdup.asm
+SRCS += ft_strlen.s
+SRCS += ft_write.s
+SRCS += ft_read.s
+SRCS += ft_strcpy.s
+SRCS += ft_strcmp.s
+SRCS += ft_strdup.s
 
 # vpath %.c ./
-# vpath %.asm ./
+# vpath %.s ./
 
 # ---------------- INC --------------- #
 
@@ -84,20 +83,20 @@ HEAD 		= $(INCLUDES)libasm.h
 # ---------------- OBJ --------------- #
 
 DIR_OBJS	= ./objs/
-OBJS		= $(patsubst %.asm, $(DIR_OBJS)%.o, $(SRCS))
+OBJS		= $(patsubst %.s, $(DIR_OBJS)%.o, $(SRCS))
 
 # --------- Compilation Rules -------- #
 
 all: $(NAME)
 
-# nasm -f elf64 ft_strlen.asm
+# nasm -f elf64 ft_strlen.s
 # gcc ft_strlen.o main.c -L./ -lasm
 
 $(NAME):	$(OBJS) $(MAIN)
 			ar rcs $@ $^
-			$(CC) -g $^ -L./ -lasm
+			$(CC) -g $^ -L./ -lasm -o $(EXEC)
 
-$(OBJS): 	$(DIR_OBJS)%.o: %.asm $(HEAD) Makefile | $(DIR_OBJS)
+$(OBJS): 	$(DIR_OBJS)%.o: %.s $(HEAD) Makefile | $(DIR_OBJS)
 			$(ASM) $(NFLASG) $< -o $@
 
 $(DIR_OBJS):
@@ -110,7 +109,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 	$(RM) $(EXEC)
-	$(RM) *.s
 	@echo "$(_BOLD)$(_RED)-> $@ made$(_END)"
 
 re: fclean
