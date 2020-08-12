@@ -1,12 +1,12 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_stdup.asm                                       :+:      :+:    :+:    ;
+;    ft_strdup.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/22 16:19:39 by julnolle          #+#    #+#              ;
-;    Updated: 2020/04/25 18:32:52 by julnolle         ###   ########.fr        ;
+;    Updated: 2020/08/12 10:56:33 by julnolle         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -21,7 +21,7 @@ ft_strdup:
 			xor		rax, rax
 			push	rdi			; save rdi (char *str)in order to use it later
 			call	ft_strlen
-			mov		rdi, rax	; the len of str is in rx, copy to rcx
+			mov		rdi, rax	; the len of str is in rax, copy to rcx
 			inc		rdi			; rdi + 1 to malloc len + 1
 			call	malloc
 			cmp		rax, 0		; if malloc failed, ret null

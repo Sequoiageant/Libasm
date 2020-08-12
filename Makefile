@@ -6,7 +6,7 @@
 #    By: julnolle <julnolle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/13 14:56:19 by julnolle          #+#    #+#              #
-#    Updated: 2020/07/09 15:42:00 by julnolle         ###   ########.fr        #
+#    Updated: 2020/08/12 10:59:52 by julnolle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,40 +16,6 @@ EXEC	= libasm
 
 CC	= clang
 ASM	= nasm
-
-ifeq ($(err), no)
-	CFLAGS += -Wall
-	CFLAGS += -Wextra
-else
-	CFLAGS += -Wall
-	CFLAGS += -Wextra
-	CFLAGS += -Werror
-endif
-
-ifeq ($(debug), 0)
-	CFLAGS += -g3
-else ifeq ($(debug), 1)
-	CFLAGS += -fsanitize=address,undefined
-	CFLAGS += -g3
-else ifeq ($(debug), 2)
-	CFLAGS += -fsanitize=address,undefined
-	CFLAGS += -g3
-	CFLAGS += -ansi
-	CFLAGS += -pedantic
-else ifeq ($(debug), 3)
-	CFLAGS += -fsanitize=address,undefined
-	CFLAGS += -g3
-	CFLAGS += -ansi
-	CFLAGS += -pedantic
-	CFLAGS += -Wpadded
-else ifeq ($(debug), 4)
-	CFLAGS += -fsanitize=address,undefined
-	CFLAGS += -g3
-	CFLAGS += -ansi
-	CFLAGS += -pedantic
-	CFLAGS += -Wpadded
-	CFLAGS += -Weverything
-endif
 
 UNAME_S := $(shell uname -s)
 

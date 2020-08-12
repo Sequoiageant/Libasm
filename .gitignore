@@ -2,3 +2,4 @@ a.out
 objs/
 test/
 *.a
+main2.c
